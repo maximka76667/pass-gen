@@ -8,7 +8,7 @@ function App() {
   const [resultLength, setResultLength] = React.useState(0);
 
   function handleChange(e) {
-    if(e.target.value >= 0 && e.target.value <= 32)
+    if(e.target.value >= 0 && e.target.value <= 64)
     setStr(e.target.value);
   }
 
@@ -38,7 +38,7 @@ function App() {
   }
 
   function generatePass(str) {
-    return crypto.randomBytes(str).toString('hex');
+    return crypto.randomBytes(str / 2).toString('hex');
   }
 
   return (
@@ -50,7 +50,7 @@ function App() {
       <div className="glass">
         <h1 className="heading">Generate your password!</h1>
         <form className="form" onSubmit={handleSubmit}>
-          <input className="input" id="input" value={str} onChange={handleChange} placeholder="Number from 0 to 32" />
+          <input className="input" id="input" value={str} onChange={handleChange} placeholder="Number from 0 to 64" />
           <button className="submit-button" type="submit" disabled = { str ? false : true } >Generate Password</button>
         </form>
       </div>
