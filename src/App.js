@@ -47,20 +47,22 @@ function App() {
       <span style={{"--i": 1}}></span>
       <span style={{"--i": 2}}></span>
       <span style={{"--i": 3}}></span>
-      <div className="glass">
-        <h1 className="heading">Generate your password!</h1>
-        <form className="form" onSubmit={handleSubmit}>
-          <input className="input" id="input" value={str} onChange={handleChange} placeholder="Number from 0 to 64" />
-          <button className="submit-button" type="submit" disabled = { str ? false : true } >Generate Password</button>
-        </form>
-      </div>
-      <div className="glass">
-        <div className="result-wrapper">
-          <p className="result">{result}</p>
-          <button className="copy-button" onClick={handleCopy} disabled = { result ? false : true }>Copy</button>
+      <main className="content">
+        <div className="glass">
+          <h1 className="heading">Generate your password!</h1>
+          <form className="form" onSubmit={handleSubmit}>
+            <input className="input" id="input" value={str} onChange={handleChange} placeholder="Number from 0 to 64" />
+            <button className="submit-button" type="submit" disabled = { str ? false : true } >Generate Password</button>
+          </form>
         </div>
-        <p className="result-length">Length: {resultLength}</p>
-      </div>
+        <div className="glass">
+          <div className="result-wrapper">
+            <p className="result">{result}</p>
+            <button className="copy-button" onClick={handleCopy} disabled = { result ? false : true }>Copy</button>
+          </div>
+          <p className="result-length">Length: {resultLength}</p>
+        </div>
+      </main>
     </div>
   );
 }
