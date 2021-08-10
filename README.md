@@ -1,3 +1,5 @@
 # Генератор паролей
 
-Created with React
+React + Node.js
+
+Passwords generate with crypto module.
