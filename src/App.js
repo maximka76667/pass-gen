@@ -24,16 +24,16 @@ function App() {
   function handleCopy(e) {
     if(result) {
       navigator.clipboard.writeText(result)
-      .then(() => {
-        const tmp = result;
-        setResult('Скопировано!');
-        setTimeout(() => {
-          setResult(tmp);
-        }, 500)
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        .then(() => {
+          const tmp = result;
+          setResult('Copied!');
+          setTimeout(() => {
+            setResult(tmp);
+          }, 500)
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 
